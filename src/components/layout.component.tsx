@@ -18,7 +18,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         <meta name="author" content="hjcasayas" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="py-5 px-6 min-h-screen md:py-10 md:px-20 bg-[#2a2b2f] text-[#e5eaf0]">
+      <div className="py-5 px-6 min-h-screen md:py-10 md:px-20 bg-primary-500 text-secondary-500">
         <div className="flex flex-col container mx-auto">
           <div className="mb-9 lg:mb-32">
             <Nav></Nav>

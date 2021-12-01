@@ -14,10 +14,10 @@ export const NavWeb: FunctionComponent = () => {
     <nav className="hidden lg:inline-block">
       <ul className="flex items-center">
         {navigationOptions.map((option) => {
-          let selectedOptionStyles = "border-primary";
+          let selectedOptionStyles = "border-primary-500";
 
           if (selectedOption === option.title) {
-            selectedOptionStyles = "border-secondary";
+            selectedOptionStyles = "border-secondary-500";
           }
 
           return (
