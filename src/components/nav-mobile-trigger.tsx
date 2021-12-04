@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 
 interface NavMobileTriggerProps {
   open: boolean;

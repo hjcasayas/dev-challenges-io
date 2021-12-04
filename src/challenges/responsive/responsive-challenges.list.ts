@@ -8,7 +8,7 @@ export const responsiveChallenges: ChallengeModel[] = [
     description:
       "This challenge is suitable for you if you just started with coding. The challenge will test your basic CSS and HTML skills.",
     status: ChallengeStatus.InProgress,
-    href: "/not-found",
+    href: "https://not-found.hjcasayas.dev",
   },
   {
     title: "My Team Page",
