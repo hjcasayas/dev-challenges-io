@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from "react";
+import { useRouter } from "next/dist/client/router";
+import { FunctionComponent } from "react";
 import Link from "next/link";
 
 import { navigationOptions } from "./nav";
@@ -12,12 +13,8 @@ const NavMobile: FunctionComponent<NavMobileProps> = ({
   open,
   onOpen,
 }: NavMobileProps) => {
-  const [selectedOption, setSelectedOption] = useState<string>("Responsive");
-
-  const handleOptionSelection = (selectedOption: string) => {
-    setSelectedOption(selectedOption);
-    onOpen();
-  };
+  const router = useRouter();
+  const pathName = router.pathname;
 
   const showStyle = open ? "block" : "hidden";
   const opacity = open ? "opacity-100 ease-out" : "opacity-0 ease-in";
@@ -30,7 +27,7 @@ const NavMobile: FunctionComponent<NavMobileProps> = ({
         {navigationOptions.map((option) => {
           let selectedOptionStyles = "border-gray-900";
 
-          if (selectedOption === option.title) {
+          if (pathName === option.href) {
             selectedOptionStyles = "border-gray-100";
           }
 
@@ -38,7 +35,7 @@ const NavMobile: FunctionComponent<NavMobileProps> = ({
             <li
               key={option.title}
               className={`text-center font-medium text-lg leading-6 mb-8 pb-1 pl-1 pr-1 inline-block border-b-2 ${selectedOptionStyles}`}
-              onClick={() => handleOptionSelection(option.title)}
+              onClick={onOpen}
             >
               <Link href={option.href}>
                 <a>{option.title}</a>

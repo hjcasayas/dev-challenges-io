@@ -1,14 +1,12 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
+import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 
 import { navigationOptions } from "./nav";
 
 export const NavWeb: FunctionComponent = () => {
-  const [selectedOption, setSelectedOption] = useState<string>("Responsive");
-
-  const handleOptionSelection = (selectedOption: string) => {
-    setSelectedOption(selectedOption);
-  };
+  const router = useRouter();
+  const pathName = router.pathname;
 
   return (
     <nav className="hidden lg:inline-block">
@@ -16,7 +14,11 @@ export const NavWeb: FunctionComponent = () => {
         {navigationOptions.map((option) => {
           let selectedOptionStyles = "border-primary-500";
 
-          if (selectedOption === option.title) {
+          if (pathName === option.href) {
+            selectedOptionStyles = "border-secondary-500";
+          }
+
+          if (pathName === "/" && option.href === "/responsive") {
             selectedOptionStyles = "border-secondary-500";
           }
 
@@ -24,7 +26,6 @@ export const NavWeb: FunctionComponent = () => {
             <li
               key={option.title}
               className={`text-center font-medium text-lg leading-6 p-1 ml-20 inline-block cursor-pointer border-b-2 first-of-type:ml-0 ${selectedOptionStyles}`}
-              onClick={() => handleOptionSelection(option.title)}
             >
               <Link href={`${option.href}`}>
                 <a>{option.title}</a>

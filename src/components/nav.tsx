@@ -3,16 +3,16 @@ import { NameLogo } from "./name-logo.component";
 import { NavMobile } from "./nav-mobile";
 import { NavMobileTrigger } from "./nav-mobile-trigger";
 import { NavWeb } from "./nav-web";
-
+import Link from "next/link";
 export interface NavigationOption {
   title: string;
   href: string;
 }
 
 export const navigationOptions: NavigationOption[] = [
-  { title: "Responsive", href: "/" },
-  { title: "Frontend", href: "/frontend" },
-  { title: "Fullstack", href: "/fullstack" },
+  { title: "Responsive", href: "/responsive" },
+  { title: "Front End", href: "/front-end" },
+  { title: "Full Stack", href: "/full-stack" },
 ];
 
 export const Nav: FunctionComponent = () => {
@@ -25,7 +25,11 @@ export const Nav: FunctionComponent = () => {
   return (
     <div className="flex flex-row items-center justify-between text-gray-100">
       <h1 className="text-sm font-extralight border border-white leading-4 p-2">
-        <NameLogo />
+        <Link href={"/"}>
+          <a className="inline-block">
+            <NameLogo />
+          </a>
+        </Link>
       </h1>
       <span className="inline-block">
         <NavMobileTrigger open={open} onOpen={handleOpen}></NavMobileTrigger>
