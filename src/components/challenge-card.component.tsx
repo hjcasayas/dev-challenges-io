@@ -22,7 +22,11 @@ export const ChallengeCardComponent: FunctionComponent<Props> = ({
 }) => (
   <div className="p-3 w-full flex flex-col sm:w-2/4 lg:w-1/3 xl:w-1/4">
     <Link href={href}>
-      <a className="p-4 bg-primary-700 border-[1px] border-primary-400 hover:border-secondary-500 flex-1 flex flex-col">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        className="p-4 bg-primary-700 border-[1px] border-primary-400 hover:border-secondary-500 flex-1 flex flex-col"
+      >
         <div>
           <Image
             className="rounded block"
