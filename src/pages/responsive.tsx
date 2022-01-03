@@ -10,15 +10,8 @@ const Responsive: NextPage = () => {
       <Title pageName="Responsive"></Title>
       <h2>Responsive Path</h2>
       <div className="flex items-stretch flex-wrap mx-[-12px]">
-        {responsiveChallenges.map((r) => (
-          <ChallengeCardComponent
-            description={r.description}
-            status={r.status}
-            title={r.title}
-            href={r.href}
-            src={r.src}
-            key={r.src}
-          />
+        {responsiveChallenges.map((r, index) => (
+          <ChallengeCardComponent {...r} key={r.src} index={index} />
         ))}
       </div>
     </>

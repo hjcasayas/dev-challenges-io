@@ -10,6 +10,7 @@ interface Props {
   title: string;
   href: string;
   src: string;
+  index: number;
 }
 
 // eslint-disable-next-line react/display-name
@@ -19,6 +20,7 @@ export const ChallengeCardComponent: FunctionComponent<Props> = ({
   title,
   href,
   src,
+  index,
 }) => (
   <div className="p-3 w-full flex flex-col sm:w-2/4 lg:w-1/3 xl:w-1/4">
     <Link href={href}>
@@ -35,7 +37,7 @@ export const ChallengeCardComponent: FunctionComponent<Props> = ({
             width={750}
             alt={title}
             src={src}
-            priority
+            priority={index < 4}
           />
         </div>
         <div className="pt-4 flex-1 flex flex-col justify-between">
