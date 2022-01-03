@@ -3,7 +3,8 @@ FROM node:16.13.0-alpine3.14 AS base
 FROM base AS development
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN npm install -g pnpm \
+RUN npm install -g npm@8.3.0 \
+    npm install -g pnpm \
     && pnpm install
 COPY . /app/
 EXPOSE 3000
@@ -14,7 +15,8 @@ FROM base AS staging-builder
 ENV NODE_ENV=development
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN npm install -g pnpm \
+RUN npm install -g npm@8.3.0 \
+    npm install -g pnpm \
     && pnpm install
 COPY . /app/
 RUN pnpm run build
@@ -34,7 +36,8 @@ CMD [ "start" ]
 FROM base AS production-builder
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN npm install -g pnpm \
+RUN npm install -g npm@8.3.0 \
+    npm install -g pnpm \
     && pnpm install
 COPY . /app/
 RUN pnpm run build
