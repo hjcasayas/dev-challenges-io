@@ -1,8 +1,5 @@
 import { ChallengeStatus } from "../challenge-status.enum";
 import { ChallengeModel } from "../challenge.model";
-import getConfig from "next/config";
-
-const { publicRuntimeConfig } = getConfig();
 
 export const responsiveChallenges: ChallengeModel[] = [
   {
@@ -11,7 +8,7 @@ export const responsiveChallenges: ChallengeModel[] = [
     description:
       "This challenge is suitable for you if you just started with coding. The challenge will test your basic CSS and HTML skills.",
     status: ChallengeStatus.Done,
-    href: publicRuntimeConfig?.notFoundBaseUrl || "",
+    href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
   {
     title: "My Team Page",
