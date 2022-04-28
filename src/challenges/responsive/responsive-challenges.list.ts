@@ -15,8 +15,8 @@ export const responsiveChallenges: ChallengeModel[] = [
     src: "/challenges/responsive/my-team-page.png",
     description:
       "This challenge will test your basic CSS skills and get it to next level. You will work with basic HTML elements to make a single but yet elegant team page.",
-    status: ChallengeStatus.ToDo,
-    href: "",
+    status: ChallengeStatus.InProgress,
+    href: process.env.NEXT_PUBLIC_MY_TEAM_PAGE_BASE_URL || "",
   },
   {
     title: "Interior Consultant",
