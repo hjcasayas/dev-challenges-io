@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { ChallengeStatus } from "../challenges/challenge-status.enum";
 
-import { frontEndChallenges } from "../challenges/frontend/frontend-challenges.list";
+import { frontEndChallenges } from "../challenges/front-end/front-end-challenges.list";
 import { ChallengeCardComponent } from "../components/challenge-card.component";
 import { Title } from "../components/title.component";
 
