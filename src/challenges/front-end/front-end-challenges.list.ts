@@ -27,7 +27,7 @@ export const frontEndChallenges: ChallengeModel[] = [
     href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
   {
-    title: "Todo app",
+    title: "Todo App",
     src: "/challenges/front-end/todo-app.png",
     description:
       "Todo app is one of the common projects when it comes to practicing coding. This challenge is another todo list.",
@@ -35,7 +35,7 @@ export const frontEndChallenges: ChallengeModel[] = [
     href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
   {
-    title: "Random quote generator",
+    title: "Random Quote Generator",
     src: "/challenges/front-end/quote-generator.png",
     description:
       "Famous quotes can be great source of motivation. This challenge is all about quotes.",
@@ -43,7 +43,7 @@ export const frontEndChallenges: ChallengeModel[] = [
     href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
   {
-    title: "Country quiz",
+    title: "Country Quiz",
     src: "/challenges/front-end/country-quiz.png",
     description:
       "If you want to learn more about countries, this challenge is perfect for you.",
@@ -51,10 +51,18 @@ export const frontEndChallenges: ChallengeModel[] = [
     href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
   {
-    title: "Weather app",
+    title: "Weather App",
     src: "/challenges/front-end/weather-challenge.png",
     description:
       "Weather app is another popular project for practicing coding. In this challenge, you will work an interesting UI for a weather app.",
+    status: ChallengeStatus.ToDo,
+    href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
+  },
+  {
+    title: "Github Jobs",
+    src: "/challenges/front-end/github-jobs.png",
+    description:
+      "What is the current job market? Let's make a job search app with Github Jobs API.",
     status: ChallengeStatus.ToDo,
     href: process.env.NEXT_PUBLIC_NOT_FOUND_BASE_URL || "",
   },
